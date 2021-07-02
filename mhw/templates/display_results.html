@@ -1,0 +1,30 @@
+<ul class="posts">
+    {% for row in results %}
+    <div class = "details">
+      <h2  onClick = "toggleDetails(this)" id = "{{ loop.index }}">{{ row.armorPiece.name }}</h2>
+      <div id = "detail{{ loop.index }}" style = "display: none">
+        <h3>Materials</h3>
+        {% for material in row.materials %}
+          {{ material.name }} ({{material.rank}}) |
+        {% endfor %}
+        <h3>Rewards From</h3>
+        {% for monster in row.monsters %}
+          {{ monster.name }} |
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+</ul>
+
+<script>
+  // opens details on click to provide info
+  function toggleDetails(result){
+    let currentTable = document.getElementById("detail"+result.id);
+    if(currentTable.style.display == "none" || currentTable.style.display == null){
+      currentTable.style.display = "block";
+    }
+    else{
+      currentTable.style.display = "none";
+    }
+  }
+</script>

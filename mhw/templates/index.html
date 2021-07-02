@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block body %}
+<h2>Search by text the armor name contains</h2>
+    <form action="{{ url_for('search_armor') }}" method="post">
+        <dl>
+            <dt>Armor Piece Name:</dt>
+            <dd><input type="text" size="30" name="armor"></dd><br>
+            <dt>Filter Results by Hunter Rank:</dt>
+            <select name = "rank">
+              <option value = "" selected>All</option>
+              <option value = "LR">Low Rank</option>
+              <option value = "HR">High Rank</option>
+              <option value = "MR">Master Rank</option>
+           </select>
+        </dl>
+        <input type="submit" value="Search">
+    </form>
+
+<br>
+
+{% endblock %}
