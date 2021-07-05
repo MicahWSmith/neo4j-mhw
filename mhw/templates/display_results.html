@@ -5,11 +5,11 @@
       <div id = "detail{{ loop.index }}" style = "display: none">
         <h3>Materials</h3>
         {% for material in row.materials %}
-          {{ material.name }} ({{material.rank}}) |
+          <p>{{ material.name }} ({{material.rank}})</p>
         {% endfor %}
         <h3>Rewards From</h3>
         {% for monster in row.monsters %}
-          {{ monster.name }} |
+        <p>{{ monster.name }}</p>
         {% endfor %}
       </div>
     </div>
